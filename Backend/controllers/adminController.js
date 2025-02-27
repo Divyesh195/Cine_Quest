@@ -14,8 +14,9 @@ const loginAdmin = async (req,res)=>{
 
         if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD){
 
-            const tocken = Jwt.sign((email+password).toString(), process.env.JWT_SECRET)
-            res.json({success:true, tocken})
+            const token = Jwt.sign((email+password).toString(), process.env.JWT_SECRET)
+            res.json({success:true, token, message:"Login Successfull" })
+            console.log('Admin is logged in successfully');
         }
         else{
             res.json({success:false, message:"Invalid credential"})
@@ -71,13 +72,13 @@ const addMovie =async(req,res) =>{
 
         res.json({success:true,message:"Movie added successfully"})
 
-        await newMovie.save();
+        // await newMovie.save();
 
         console.log({name, email, password, part, genre, duration, about, availability, price},imgFile);
 
     } catch (error) {
         console.log(error);
-        res.json({success:false,message:error.message})
+        res.json({success:false,message:"Failed to add movie"})
     }
 }
 

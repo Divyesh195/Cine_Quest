@@ -5,13 +5,14 @@ const authAdmin = async(req,res,next)=>{
     try {
 
         const aToken = req.get('aToken')
-        console.log("This is the token",aToken);
+        // console.log("This is the token",aToken);
 
         if(!aToken){
             return res.json({success:false, message:"No token available"})
         }
 
         const decoded_token = Jwt.verify(aToken, process.env.JWT_SECRET)
+        // console.log("This is decoded token",decoded_token)
 
         if(decoded_token !== process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD){
             return res.json({success:false, message:"Not authorized"})
