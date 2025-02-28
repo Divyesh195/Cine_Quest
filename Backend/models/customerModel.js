@@ -12,7 +12,7 @@ const customerSchema = new mongoose.Schema({
     password : {type:String, required:true},
     dob : {type:String, required:false, default:"Not selected"},
     gender : {type:String, required:true , default:"Not selected"},
-    address : {type:String, default:{line1 : ' ', line2 : ' '}},
+    address : {type:Object, default:{line1 : ' ', line2 : ' '}, required:false},
     img : {type:String, default:base.img_64},
 },{minimize:false})
 

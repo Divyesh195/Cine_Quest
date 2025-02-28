@@ -13,6 +13,8 @@ const AppContextProvider = (props) => {
 
     const [MoviesData, setMoviesData] = useState([]);
 
+    const[token, setToken] = useState(localStorage.getItem('token')?localStorage.getItem('token'):'');
+
     const getMoviesData = async () => {
         try {
             const { data } = await axios.get(backendUrl + '/api/movie/list')
@@ -32,7 +34,7 @@ const AppContextProvider = (props) => {
     },[])
 
     const value = {
-        MoviesData, currency
+        MoviesData, currency, token, setToken, backendUrl
     }
 
     return (

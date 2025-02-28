@@ -1,15 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { assets } from '../assets/assets'
 import { NavLink, useNavigate } from 'react-router'
 import { FaBars } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
+import { AppContext } from '../context/AppContext';
+import { toast } from 'react-toastify';
 
 function Navbar() {
 
     const navigate = useNavigate();
 
     const [showMenu, setShowMenu] = useState(false)
-    const [token, setToken] = useState(true)
+    const { token, setToken } = useContext(AppContext)
+
+    const logOut = () => {
+        if (token) {
+            setToken('')
+            toast.success("Logged Out")
+            localStorage.removeItem('token')
+            navigate('/')
+        }
+    }
 
     return (
         <nav className='flex items-center justify-between py-4 mb-5 border-b border-b-gray-500'>
@@ -46,11 +57,11 @@ function Navbar() {
                     token
                         ? <div className='flex gap-2 items-center group relative'>
                             <img src={assets.profileIMG} alt="" className='w-10 rounded-full cursor-pointer' />
-                            <div className='absolute top-0 right-0 pt-12 text-gray-700 font-bold z-20 hidden group-hover:block'>
+                            <div className='absolute top-0 right-0 pt-12 text-gray-700 font-semibold z-20 hidden group-hover:block'>
                                 <div className='min-w-33 flex flex-col gap-2 p-3 bg-gray-200 rounded-xl'>
                                     <p onClick={() => navigate('my-profile')} className='cursor-pointer hover:text-black'>My Profile</p>
                                     <p onClick={() => navigate('my-bookings')} className='cursor-pointer hover:text-black'>My Bookings</p>
-                                    <p onClick={() => setToken(false)} className='cursor-pointer hover:text-black'>Log out</p>
+                                    <p onClick={logOut} className='cursor-pointer hover:text-black'>Log out</p>
                                 </div>
                             </div>
                         </div>

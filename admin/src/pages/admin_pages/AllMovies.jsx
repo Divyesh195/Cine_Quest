@@ -17,7 +17,7 @@ function AllMovies() {
       <div className='flex gap-5 flex-wrap'>
         {
           movies.map((item, index) => (
-            <div key={index} className='bg-gray-100 pb-1 min-w-60'>
+            <div key={index} className='bg-gray-200 pb-1 min-w-60'>
               <img src={item.img} alt="" className='w-80 grayscale-50 hover:grayscale-0 transition-all duration-300 cursor-pointer' />
               <div className='flex items-center justify-between mt-2 '>
                 <p className='text-2xl ml-2 font-semibold'>{item.name}</p>
