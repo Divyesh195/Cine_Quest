@@ -11,7 +11,7 @@ function Sidebar() {
   const { aToken } = useContext(AdminContext)
 
   return (
-    <div className='min-h-250 border-r-2 border-primary'>
+    <div className='min-h-screen min-w-fit border-r-2 border-primary'>
       {
         aToken && <ul className='mt-5  flex flex-col gap-2 '>
           <NavLink to={'/admin-dashboard'} className={({ isActive }) => `transition-all duration-200 flex items-center gap-2 px-5 py-3 ${isActive ? 'bg-primary text-white ' : ''}`} >

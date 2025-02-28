@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router"
+import { ToastContainer } from 'react-toastify';
 import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Contact from './pages/Contact'
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <div className="mx-4 md:mx-[10%]">
+      <ToastContainer />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

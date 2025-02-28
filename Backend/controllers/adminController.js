@@ -31,7 +31,7 @@ const loginAdmin = async (req,res)=>{
 //API for adding a movie
 const addMovie =async(req,res) =>{
     try {
-        const{name, email, password, part, genre, duration, about, availability, price}=req.body
+        const{name, email, password, part, genre, duration, about, price}=req.body
         const imgFile = req.file
 
         if(!name || !email || !password || !genre || !duration || !about || !price){
@@ -40,11 +40,13 @@ const addMovie =async(req,res) =>{
 
         //Validation of email
         if(!validator.isEmail(email)){
-            return req.json({success:false, message:"Please enter a valid email."})
+            return res.json({success:false, message:"Please enter a valid email."})
         }
         //Validation of password
-        if(password.lenght < 8){
-            return req.json({success:false, message:"Please enter a strong password"})
+        const p_lenght = password.length;
+        if(p_lenght < 8){
+            console.log('Password issue');
+            return res.json({success:false, message:"Please enter a strong password"})
         }
 
         //Hashing the password
@@ -55,12 +57,28 @@ const addMovie =async(req,res) =>{
         const imgUpload = await cloudinary.uploader.upload(imgFile.path,{resource_type:"image"})
         const imgUrl = imgUpload.secure_url
 
+        var path = "";
+
+        if(genre === "Action"){
+            path = "action"
+        }
+        else if(genre === "Science Fiction"){
+            path = "scifi"
+        }
+        else if(genre === "Superhero"){
+            path = "superhero"
+        }
+        else{
+            path = "comedy"
+        }
+
         const movieData={
             name,
             part,
             email,
             password:hashedPassword,
             genre,
+            path,
             img:imgUrl,
             duration,
             about,
@@ -71,10 +89,11 @@ const addMovie =async(req,res) =>{
         const newMovie = new movieModel(movieData)
 
         res.json({success:true,message:"Movie added successfully"})
+        console.log('Movie added successfully');
 
-        // await newMovie.save();
+        await newMovie.save();
 
-        console.log({name, email, password, part, genre, duration, about, availability, price},imgFile);
+        console.log({name, email, password, part, genre, duration, about, price},imgFile);
 
     } catch (error) {
         console.log(error);
@@ -82,6 +101,18 @@ const addMovie =async(req,res) =>{
     }
 }
 
+//API to fetch all Movies data
+const allMovies = async (req,res) =>{
+    try {
+        const movies = await movieModel.find({}).select('-password')
+        res.json({success:true, movies})
+
+    } catch (error) {
+        console.log(error);
+        res.json({success:false,message:"Failed to load movies data"})
+    }
+}
 
 
-export {addMovie, loginAdmin}
+
+export {addMovie, loginAdmin, allMovies}

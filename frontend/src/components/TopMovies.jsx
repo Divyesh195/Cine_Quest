@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 // import { MoviesData } from '../assets/assets'
 import { useNavigate } from 'react-router'
-import { AppContext } from '../context/AppContext';
+import { AppContext} from '../context/AppContext';
 
 function TopMovies() {
 
@@ -15,7 +15,7 @@ function TopMovies() {
         <p className='text-xl text-center text-gray-600 mt-2'>Browse through our top picks</p>
         <div className='flex flex-wrap gap-10 justify-evenly mt-5'>
 
-        {MoviesData.slice(0,10).map((item,index)=>(
+        {MoviesData.map((item,index)=>(
 
           <div onClick={()=>{navigate(`/booking/${item._id}`); scrollTo(0,0)}} key={index} className='sm:w-70 w-80 bg-gray-100 flex flex-col items-start p-1 rounded-lg hover:translate-y-[-5px] transition-all duration-400 cursor-pointer'>
             <img src={item.img} alt="" className='grayscale-50 hover:grayscale-0 transition-all duration-200'/>

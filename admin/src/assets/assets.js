@@ -70,7 +70,6 @@ export const MoviesData = [
     genre: "Action",
     path: "action",
     duration: "3H 12Min",
-    // dimention : "yes",
     price: "140",
     img: avatar,
     about:

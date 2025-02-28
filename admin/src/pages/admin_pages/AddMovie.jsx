@@ -12,7 +12,6 @@ function AddMovies() {
   const [genre, setGenre] = useState('');
   const [duration, setDuration] = useState('');
   const [about, setAbout] = useState('');
-  const [avail, setAvail] = useState('')
   const [price, setPrice] = useState(0);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,7 +35,6 @@ function AddMovies() {
       formdata.append('password', password)
       formdata.append('genre', genre)
       formdata.append('duration', duration)
-      formdata.append('availability',avail)
       formdata.append('about', about)
       formdata.append('price', price)
 
@@ -44,22 +42,34 @@ function AddMovies() {
         console.log(`${key} : ${value}`)
       })
 
-      const {data} = await axios.post(backendURL + '/api/admin/add-movie' , formdata, {headers:{aToken}})
+      const { data } = await axios.post(backendURL + '/api/admin/add-movie', formdata, { headers: { aToken } })
 
-      if(data.success){
-        return toast.success(data.message)
-      }else{
-        return toast.error(data.message)
+      if (data.success) {
+
+        setMovImg(false)
+        setName('')
+        setPart('')
+        setDuration('')
+        setAbout('')
+        setPrice('')
+        setEmail('')
+        setPassword('')
+
+        toast.success(data.message)
+
+      } else {
+        toast.error(data.message)
       }
 
 
     } catch (error) {
-
+      toast.error(error)
+      console.log(error)
     }
   }
 
   return (
-    <form onSubmit={onSubmitHandler} className='my-5 ml-5 w-[70vw]'>
+    <form onSubmit={onSubmitHandler} className='m-5 w-[70vw]'>
       <p className='text-3xl' >Add Movie</p>
 
       <div className='bg-gray-100 rounded-xl mt-5 p-5'>
@@ -111,20 +121,11 @@ function AddMovies() {
             </div>
           </div>
 
-          <div>
-            <p className='mb-2'>About :</p>
-            <textarea onChange={(e) => setAbout(e.target.value)} value={about} cols="50" placeholder='Type about movie' required className='rounded-md outline-gray-300 focus:outline-primary outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 py-2 pl-2 w-[95%]' />
-          </div>
 
           <div className='flex w-full gap-5'>
-
             <div className='flex-1'>
-              <p className='mb-2'>Availability :</p>
-              <select onChange={(e) => setAvail(e.target.value)} value={avail} name="" id="" className='rounded-md outline-gray-300 focus:outline-primary outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 py-2 pl-2 w-[90%]'>
-                <option value="" defaultChecked>  </option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-              </select>
+              <p className='mb-2'>About :</p>
+              <textarea onChange={(e) => setAbout(e.target.value)} value={about} cols="50" placeholder='Type about movie' required className='rounded-md outline-gray-300 focus:outline-primary outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 py-2 pl-2 w-[90%]' />
             </div>
 
             <div className='flex-1'>
