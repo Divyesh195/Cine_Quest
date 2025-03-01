@@ -6,3 +6,5 @@
 *.ai
 
 node_modules
+
+!/screenshot/.png
