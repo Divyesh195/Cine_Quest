@@ -69,13 +69,13 @@ export const MoviesData = [
     part: "The Way of Water",
     genre: "Action",
     path: "action",
-    duration: "3H 12Min",
+    duration: "3H 12M",
     price: "140",
     img: avatar,
     about:
       "Jake Sully and Ney'tiri have formed a family and are doing everything to stay together. However, they must leave their home and explore the regions of Pandora. When an ancient threat resurfaces, Jake must fight a difficult war against the humans.",
     distributor_id: "avatar@gmail.com",
-    password: "123",
+    password: "11111111",
   },
   {
     name: "Doctor Strange",
@@ -83,11 +83,13 @@ export const MoviesData = [
     part: "Multiverse of Madness",
     genre: "Science Fiction",
     path: "scifi",
-    duration: "2H 46Min",
+    duration: "2H 46M",
     price: "180",
     img: doctorst,
     about:
       "Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across multiverses, to battle multiple threats, including other-universe versions of himself, which threaten to wipe out millions across the multiverse.",
+      email : "doctorst@gmail.com",
+      password : "22222222"
   },
   {
     name: "Avengers Endgame",
@@ -95,11 +97,13 @@ export const MoviesData = [
     part: " ",
     genre: "Action",
     path: "action",
-    duration: "3H 15Min",
+    duration: "3H 15M",
     price: "250",
     img: endgame,
     about:
       "After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.",
+      email : "avengers4@gmail.com",
+      password : "33333333"
   },
   {
     name: "Eternals",
@@ -184,6 +188,8 @@ export const MoviesData = [
     img: spider3,
     about:
       "Peter Parker becomes one with a symbiotic alien that bolsters his Spider-Man avatar and affects his psyche. He also has to deal with Sandman and maintain a fragmented relationship with Mary Jane.",
+      distributor_id: "spiderm3@gmail.com",
+    password: "22222222",
   },
   {
     name: "Batman",
@@ -196,6 +202,8 @@ export const MoviesData = [
     img: batman,
     about:
       "After witnessing his parents' death, Bruce learns the art of fighting to confront injustice. When he returns to Gotham as Batman, he decides to stop a secret society that intends to destroy the city.",
+      email: "batman@gmail.com",
+      password : "12345678"
   },
   {
     name: "Thor",

@@ -11,7 +11,7 @@ function Navbar() {
     const navigate = useNavigate();
 
     const [showMenu, setShowMenu] = useState(false)
-    const { token, setToken } = useContext(AppContext)
+    const { token, setToken, customerData } = useContext(AppContext)
 
     const logOut = () => {
         if (token) {
@@ -56,9 +56,9 @@ function Navbar() {
                 {
                     token
                         ? <div className='flex gap-2 items-center group relative'>
-                            <img src={assets.profileIMG} alt="" className='w-10 rounded-full cursor-pointer' />
+                            <img src={customerData.img} alt="" className='w-10 h-10 rounded-full cursor-pointer object-cover overflow-hidden' />
                             <div className='absolute top-0 right-0 pt-12 text-gray-700 font-semibold z-20 hidden group-hover:block'>
-                                <div className='min-w-33 flex flex-col gap-2 p-3 bg-gray-200 rounded-xl'>
+                                <div className='min-w-33 flex flex-col gap-2 p-3 bg-gray-200 rounded-md'>
                                     <p onClick={() => navigate('my-profile')} className='cursor-pointer hover:text-black'>My Profile</p>
                                     <p onClick={() => navigate('my-bookings')} className='cursor-pointer hover:text-black'>My Bookings</p>
                                     <p onClick={logOut} className='cursor-pointer hover:text-black'>Log out</p>

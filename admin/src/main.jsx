@@ -2,17 +2,17 @@ import { BrowserRouter } from 'react-router';
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import AdminContextProvider from './context/AdminContext.jsx';
-import DoctorContextProvider from './context/DoctorContext.jsx';
+import MovieContextProvider from './context/MovieContext.jsx';
 import AppContextProvider from './context/AppContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <AdminContextProvider>
-      <DoctorContextProvider>
+      <MovieContextProvider>
         <AppContextProvider>
           <App />
         </AppContextProvider>
-      </DoctorContextProvider>
+      </MovieContextProvider>
     </AdminContextProvider>
   </BrowserRouter>
 )

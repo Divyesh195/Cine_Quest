@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { AdminContext } from '../context/AdminContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { MovieContext } from '../context/MovieContext'
 
 
 function Login() {
@@ -13,6 +14,8 @@ function Login() {
 
   const { setAToken, backendURL } = useContext(AdminContext)
 
+  const { setDToken } = useContext(MovieContext)
+
   const onSubmitHandler = async (event) => {
     event.preventDefault()
 
@@ -20,10 +23,20 @@ function Login() {
       if (state === "Admin") {
         const { data } = await axios.post(backendURL + '/api/admin/login', { email, password })
         if (data.success) {
-          localStorage.setItem('aToken', data.token)   
+          localStorage.setItem('aToken', data.token)
           setAToken(data.token)
         }
-        else{
+        else {
+          toast.error(data.message)
+        }
+      } else {
+        const { data } = await axios.post(backendURL + '/api/movie/login', { email, password })
+
+        if (data.success) {
+          localStorage.setItem('dToken', data.token)
+          setDToken(data.token)
+          console.log("Distributor Token" , data.token)
+        } else {
           toast.error(data.message)
         }
       }

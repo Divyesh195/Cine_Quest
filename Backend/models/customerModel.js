@@ -8,10 +8,10 @@ const base = {
 
 const customerSchema = new mongoose.Schema({
     name : {type:String, required:true}, 
-    mobile : {type:String, require:true, default:"0000000000", unique:true},
+    mobile : {type:String, required:true, unique:true},
     password : {type:String, required:true},
-    dob : {type:String, required:false, default:"Not selected"},
-    gender : {type:String, required:true , default:"Not selected"},
+    dob : {type:String, default:"Not selected"},
+    gender : {type:String, default:"Not selected"},
     address : {type:Object, default:{line1 : ' ', line2 : ' '}, required:false},
     img : {type:String, default:base.img_64},
 },{minimize:false})

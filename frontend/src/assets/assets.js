@@ -24,7 +24,7 @@ import thor from "./thor.jpg";
 import transformer from "./transformer.jpg";
 import aboutIMG from "./about.jpg";
 import contactUs from "./contact.png";
-import profileIMG from "./profile.png";
+import default_user from "./default_user.jpg"
 
 export const assets = {
   logo,
@@ -33,7 +33,7 @@ export const assets = {
   banner,
   aboutIMG,
   contactUs,
-  profileIMG,
+  default_user
 };
 
 export const genreData = [

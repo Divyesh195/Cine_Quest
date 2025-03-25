@@ -13,6 +13,8 @@ const AppContextProvider = (props) => {
 
     const [MoviesData, setMoviesData] = useState([]);
 
+    const[customerData, setCustomerData] = useState(false);
+
     const[token, setToken] = useState(localStorage.getItem('token')?localStorage.getItem('token'):'');
 
     const getMoviesData = async () => {
@@ -29,12 +31,36 @@ const AppContextProvider = (props) => {
         }
     }
 
+    const getCdata = async()=>{
+        try {
+
+            const {data} = await axios.get(backendUrl + '/api/customer/get-customer-data', {headers:{token}})
+            if(data.success){
+                setCustomerData(data.customerData)
+            }
+            else{
+                toast.error(data.message)
+            }
+        } catch (error) {
+            console.log(error)
+            toast.error(error)
+        }
+    }
+
+    useEffect(()=>{
+       if(token){
+        getCdata()
+       }else{
+        setCustomerData(false)
+       }
+    },[token])
+
     useEffect(()=>{
         getMoviesData()
     },[])
 
     const value = {
-        MoviesData, currency, token, setToken, backendUrl
+        MoviesData, getMoviesData, currency, token, setToken, backendUrl, customerData, setCustomerData, getCdata
     }
 
     return (

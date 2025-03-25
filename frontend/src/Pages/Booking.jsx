@@ -1,12 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { Navigate, useNavigate, useParams } from 'react-router'
 import { AppContext } from '../context/AppContext';
 import RelatedMovies from '../components/RelatedMovies';
+import { toast } from 'react-toastify'
+import axios from 'axios'
 
 function Bookings() {
 
   const { movieID } = useParams();
-  const { MoviesData, currency } = useContext(AppContext);
+  const { MoviesData, currency, backendUrl, token, getMoviesData } = useContext(AppContext);
+
+  const navigate = useNavigate()
 
   const daysofWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
@@ -47,6 +51,8 @@ function Bookings() {
 
       let timeSlots = [];
 
+      // console.log("Datatype of timeslot", typeof(timeSlots))
+
       while (currentDate < endtime) {
         let formattedTime = currentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         timeSlots.push({
@@ -60,6 +66,38 @@ function Bookings() {
 
       setMovSlot(prev => ([...prev, timeSlots]))
 
+    }
+  }
+
+  const bookMyMovie = async ()=>{
+    try {
+      if(!token){
+        toast.warn("Login required")
+        return navigate('/login')
+      }
+  
+      const date = movSlot[slotIndex][0].dateTime
+  
+      let day = date.getDate()
+  
+      let month = date.getMonth() + 1
+  
+      let year = date.getFullYear()
+  
+      const slotDate = day + "-" + month + "-" + year
+  
+      const {data} = await axios.post(backendUrl + '/api/customer/book-movie',{movieID , slotDate, slotTime}, {headers:{token}})
+  
+      if(data.success){
+        toast.success(data.message);
+        getMoviesData()
+        navigate('/my-bookings')
+      }else{
+        toast.error(data.message)
+      }
+    } catch (error) {
+      console.log(error)
+      return toast.error("Failed to book movie")
     }
   }
 
@@ -118,7 +156,7 @@ function Bookings() {
             </p>
           ))}
         </div>
-        <button className='px-2 py-1 mt-5 text-center border border-primary font-semibold hover:border-gray-700 bg-white text-primary rounded-lg text-xl hover:text-white hover:bg-gray-800 transition-all ease-in duration-100 cursor-pointer'>Book my Slot</button>
+        <button onClick={bookMyMovie} className='px-2 py-1 mt-5 text-center border border-primary font-semibold hover:border-gray-700 bg-white text-primary rounded-lg text-xl hover:text-white hover:bg-gray-800 transition-all ease-in duration-100 cursor-pointer'>Book my Slot</button>
       </div>
 
       {/* Related Movies Section  */}

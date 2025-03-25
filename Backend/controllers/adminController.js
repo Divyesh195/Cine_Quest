@@ -3,6 +3,8 @@ import bcrypt from "bcrypt"
 import { v2 as cloudinary } from 'cloudinary'
 import movieModel from "../models/movieModel.js"
 import  Jwt  from "jsonwebtoken"
+import bookingModel from "../models/bookingModel.js"
+import customerModel from "../models/customerModel.js"
 
 
 //API for admin login
@@ -114,5 +116,79 @@ const allMovies = async (req,res) =>{
 }
 
 
+//API to fetch bookings for Admin
+const bookingsAdmin = async(req,res)=>{
+    try {
 
-export {addMovie, loginAdmin, allMovies}
+        const bookings = await bookingModel.find({})
+
+        if(bookings){
+            res.json({success: true, bookings})
+        }
+
+    } catch (error) {
+        console.log(error);
+        res.json({success:false,message:"Failed to load bookings data"})
+    }
+}
+
+//API to cancel the booking by Admin
+const cancelBookingAdmin = async(req,res)=>{
+    try {
+        const { bookingID } = req.body;
+
+        console.log('Booking ID',bookingID);
+    
+        const bData = await bookingModel.findById(bookingID);
+    
+        await bookingModel.findByIdAndDelete(bookingID);
+    
+        console.log("Movie ID:", bData.movieID);
+    
+        const movData = await movieModel.findById(bData.movieID);
+    
+        // console.log("Movie Data:",movData);
+    
+        let slots_booked = movData.slots_booked;
+    
+        // console.log('Slots : ',slots_booked);
+    
+        slots_booked[bData.slotDate] = slots_booked[bData.slotDate].filter(
+          (e) => e !== bData.slotTime
+        );
+    
+        await movieModel.findByIdAndUpdate(bData.movieID, { slots_booked });
+    
+        res.json({ success: true, message: "Appointment cancelled" });
+      } catch (error) {
+        console.log(error);
+        res.json({ success: true, message: error.message });
+      }
+}
+
+//API for dashboard data of Admin
+const adminDashboard = async (req,res)=>{
+    try {
+
+        const movies = await movieModel.find({});
+        const bookings = await bookingModel.find({});
+        const customers = await customerModel.find({});
+
+        const dashboardData = {
+            movies : movies.length,
+            bookings : bookings.length,
+            // customers : customers.length,
+            latestBooking : bookings.reverse().slice(0,6)
+                }
+
+        res.json({success:true, dashboardData})
+        
+    } catch (error) {
+        console.log(error);
+        res.json({success:false,message:"Failed to load dashboard data"})
+    }
+}
+
+
+
+export {addMovie, loginAdmin, allMovies, bookingsAdmin, cancelBookingAdmin, adminDashboard}
