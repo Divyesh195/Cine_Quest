@@ -4,7 +4,7 @@ import Home from "./Pages/Home"
 import About from "./Pages/About"
 import Contact from './Pages/Contact'
 import Movies from './Pages/Movies'
-import Login from './pages/Login'
+import Login from './Pages/Login'
 import Booking from './Pages/Booking'
 import MyBookings from './Pages/MyBookings'
 import MyProfile from './Pages/MyProfile'
