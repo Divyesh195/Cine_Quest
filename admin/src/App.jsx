@@ -3,6 +3,9 @@ import Login from './pages/Login'
 import Dashboard from './pages/admin_pages/Dashboard'
 import AddMovie from './pages/admin_pages/AddMovie'
 import AllBookings from './pages/admin_pages/AllBookings'
+import MovieDashboard from './pages/distributor_pages/MovieDashboard'
+import MovieBookings from './pages/distributor_pages/movieBookings'
+import MovieProfile from './pages/distributor_pages/movieProfile'
 import './App.css'
 import { ToastContainer } from 'react-toastify';
 import { AdminContext } from './context/AdminContext';
@@ -11,9 +14,8 @@ import Sidebar from './components/Sidebar';
 import { Route, Routes } from 'react-router';
 import AllMovies from './pages/admin_pages/AllMovies'
 import { MovieContext } from './context/MovieContext'
-import MovieDashboard from './pages/distributor_pages/movieDashboard'
-import MovieBookings from './pages/distributor_pages/movieBookings'
-import MovieProfile from './pages/distributor_pages/movieProfile'
+
+
 
 function App() {
 

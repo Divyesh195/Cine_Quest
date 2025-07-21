@@ -23,7 +23,7 @@ const AdminContextProvider = (props) => {
             const { data } = await axios.post(backendURL + '/api/admin/all-movies', {}, { headers: {aToken} })
 
             if (data.success) {
-                console.log(data.movies)
+                // console.log(data.movies)
                 setMovies(data.movies)
             }
             else {
@@ -72,7 +72,7 @@ const AdminContextProvider = (props) => {
 
             if(data.success){
                 setDashData(data.dashboardData)
-                console.log(data.dashboardData)
+                // console.log(data.dashboardData)
             }else{
                 toast.error(data.message)
             }
