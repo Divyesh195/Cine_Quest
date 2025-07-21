@@ -1,30 +1,30 @@
-import logo from "./Logo.png";
-import user from "./user.png";
-import endgame_png from "./endgame_img.png";
-import banner from "./banner.png";
-import acnG from "./genre/action.png";
-import sfG from "./genre/scienceFiction.png";
-import shG from "./genre/hero.png";
-import cmdG from "./genre/comedy.png";
-// import avatar from "./avatar.jpg";
-// import barbie from "./barbie.jpg";
-// import batman from "./batman.jpg";
-// import doctorst from "./doctorst.jpg";
-// import endgame from "./endgame.jpg";
-// import eternals from "./eternals.jpg";
-// import infinitywar from "./infinitywar.jpg";
-// import interstellar from "./interstellar.jpg";
-// import mona2 from "./mona2.jpg";
-// import oppenheimer from "./oppenheimer.jpg";
-// import rednotice from "./rednotice.jpg";
-// import shangchi from "./shangchi.jpg";
-// import spider from './spider.jpg'
-// import spider3 from "./spider3.jpg";
-// import thor from "./thor.jpg";
-// import transformer from "./transformer.jpg";
-import aboutIMG from "./about.jpg";
-import contactUs from "./contact.png";
-import default_user from "./default_user.jpg"
+import logo from "/Logo.png";
+import user from "/user.png";
+import endgame_png from "/endgame_img.png";
+import banner from "/banner.png";
+import acnG from "/genre/action.png";
+import sfG from "/genre/scienceFiction.png";
+import shG from "/genre/hero.png";
+import cmdG from "/genre/comedy.png";
+// import avatar from "/avatar.jpg";
+// import barbie from "/barbie.jpg";
+// import batman from "/batman.jpg";
+// import doctorst from "/doctorst.jpg";
+// import endgame from "/endgame.jpg";
+// import eternals from "/eternals.jpg";
+// import infinitywar from "/infinitywar.jpg";
+// import interstellar from "/interstellar.jpg";
+// import mona2 from "/mona2.jpg";
+// import oppenheimer from "/oppenheimer.jpg";
+// import rednotice from "/rednotice.jpg";
+// import shangchi from "/shangchi.jpg";
+// import spider from '/spider.jpg'
+// import spider3 from "/spider3.jpg";
+// import thor from "/thor.jpg";
+// import transformer from "/transformer.jpg";
+import aboutIMG from "/about.jpg";
+import contactUs from "/contact.png";
+import default_user from "/default_user.jpg"
 
 export const assets = {
   logo,
