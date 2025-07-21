@@ -4,8 +4,8 @@ import Dashboard from './pages/admin_pages/Dashboard'
 import AddMovie from './pages/admin_pages/AddMovie'
 import AllBookings from './pages/admin_pages/AllBookings'
 import MovieDashboard from './pages/distributor_pages/MovieDashboard'
-import MovieBookings from './pages/distributor_pages/movieBookings'
-import MovieProfile from './pages/distributor_pages/movieProfile'
+import MovieBookings from './pages/distributor_pages/MovieBookings'
+import MovieProfile from './pages/distributor_pages/MovieProfile'
 import './App.css'
 import { ToastContainer } from 'react-toastify';
 import { AdminContext } from './context/AdminContext';
