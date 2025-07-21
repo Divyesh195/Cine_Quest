@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import { AppContext } from '../context/AppContext';
-import Footer from '../components/Footer';
 
 function Movies() {
 

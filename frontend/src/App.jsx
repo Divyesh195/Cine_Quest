@@ -2,12 +2,12 @@ import { Route, Routes } from "react-router"
 import { ToastContainer } from 'react-toastify';
 import Home from "./Pages/Home"
 import About from "./Pages/About"
-import Contact from './pages/Contact'
-import Movies from './pages/Movies'
+import Contact from './Pages/Contact'
+import Movies from './Pages/Movies'
 import Login from './pages/Login'
 import Booking from './Pages/Booking'
-import MyBookings from './pages/MyBookings'
-import MyProfile from './pages/MyProfile'
+import MyBookings from './Pages/MyBookings'
+import MyProfile from './Pages/MyProfile'
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 

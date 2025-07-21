@@ -116,6 +116,8 @@ export const MoviesData = [
     img: eternals,
     about:
       "The Eternals, a race of immortal beings with superhuman powers who have secretly lived on Earth for thousands of years, reunite to battle the evil Deviants.",
+      email : "eternals@gmail.com",
+      password : "56565656"
   },
   {
     name: "Avengers Infinity War",

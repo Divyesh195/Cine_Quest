@@ -26,6 +26,11 @@ import aboutIMG from "./about.jpg";
 import contactUs from "./contact.png";
 import default_user from "./default_user.jpg"
 
+
+// Users 
+// Mobile : 9724331253
+// password : GTX1650## 
+
 export const assets = {
   logo,
   user,
@@ -244,3 +249,4 @@ export const MoviesData = [
       "In the world of international crime, an Interpol agent attempts to hunt down and capture the world's most wanted art thief.",
   },
 ];
+
