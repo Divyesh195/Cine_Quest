@@ -85,7 +85,7 @@ const AdminContextProvider = (props) => {
     const backendURL = import.meta.env.VITE_BACKEND_URL
 
     const value = {
-        aToken, setAToken, backendURL, getMoviesData, movies, currency, changeAV, bookings, setBookings, getAllBookings, getMoviesData , dashData , getDashData
+        aToken, setAToken, backendURL, getMoviesData, movies, currency, changeAV, bookings, setBookings, getAllBookings, dashData , getDashData
     }
 
     return (
