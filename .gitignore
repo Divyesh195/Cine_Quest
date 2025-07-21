@@ -1,11 +1,10 @@
 *.eps
 *.svg
-*.png
-*.jpg
 *.psd
 *.ai
 
 node_modules
+Images
 
 !/screenshot/*.png
 
