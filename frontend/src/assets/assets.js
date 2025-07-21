@@ -1,30 +1,31 @@
-import logo from "/Logo.png";
-import user from "/user.png";
-import endgame_png from "/endgame_img.png";
-import banner from "/banner.png";
-import acnG from "/genre/action.png";
-import sfG from "/genre/scienceFiction.png";
-import shG from "/genre/hero.png";
-import cmdG from "/genre/comedy.png";
-// import avatar from "/avatar.jpg";
-// import barbie from "/barbie.jpg";
-// import batman from "/batman.jpg";
-// import doctorst from "/doctorst.jpg";
-// import endgame from "/endgame.jpg";
-// import eternals from "/eternals.jpg";
-// import infinitywar from "/infinitywar.jpg";
-// import interstellar from "/interstellar.jpg";
-// import mona2 from "/mona2.jpg";
-// import oppenheimer from "/oppenheimer.jpg";
-// import rednotice from "/rednotice.jpg";
-// import shangchi from "/shangchi.jpg";
-// import spider from '/spider.jpg'
-// import spider3 from "/spider3.jpg";
-// import thor from "/thor.jpg";
-// import transformer from "/transformer.jpg";
-import aboutIMG from "/about.jpg";
-import contactUs from "/contact.png";
-import default_user from "/default_user.jpg"
+
+const logo = "/Logo.png";
+const user = "/user.png";
+const endgame_png = "/endgame_img.png";
+const banner = "/banner.png";
+const acnG = "/genre/action.png";
+const sfG = "/genre/scienceFiction.png";
+const shG = "/genre/hero.png";
+const cmdG = "/genre/comedy.png";
+// const avatar = "/avatar.jpg";
+// const barbie = "/barbie.jpg";
+// const batman = "/batman.jpg";
+// const doctorst = "/doctorst.jpg";
+// const endgame = "/endgame.jpg";
+// const eternals = "/eternals.jpg";
+// const infinitywar = "/infinitywar.jpg";
+// const interstellar = "/interstellar.jpg";
+// const mona2 = "/mona2.jpg";
+// const oppenheimer = "/oppenheimer.jpg";
+// const rednotice = "/rednotice.jpg";
+// const shangchi = "/shangchi.jpg";
+// const spider = '/spider.jpg'
+// const spider3 = "/spider3.jpg";
+// const thor = "/thor.jpg";
+// const transformer = "/transformer.jpg";
+const aboutIMG = "/about.jpg";
+const contactUs = "/contact.png";
+const default_user = "/default_user.jpg"
 
 export const assets = {
   logo,
@@ -85,7 +86,7 @@ export const genreData = [
 //     price: "180",
 //     img: doctorst,
 //     about:
-//       "Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across multiverses, to battle multiple threats, including other-universe versions of himself, which threaten to wipe out millions across the multiverse.",
+//       "Doctor Strange teams up with a mysterious teenage girl = his dreams who can travel across multiverses, to battle multiple threats, including other-universe versions of himself, which threaten to wipe out millions across the multiverse.",
 //   },
 //   {
 //     name: "Avengers Endgame",
@@ -121,7 +122,7 @@ export const genreData = [
 //     price: "210",
 //     img: infinitywar,
 //     about:
-//       "As Thanos sets about his quest for finding the infinity stones and carrying out his twisted scheme, the Avengers join forces with their allies to stop him from causing chaos and destruction.",
+//       "As Thanos sets about his quest for finding the infinity stones and carrying out his twisted scheme, the Avengers join forces with their allies to stop him = causing chaos and destruction.",
 //   },
 //   {
 //     name: "interstellar",
@@ -145,7 +146,7 @@ export const genreData = [
 //     price: "120",
 //     img: mona2,
 //     about:
-//       "Moana journeys to the far seas of Oceania after receiving an unexpected call from her wayfinding ancestors.",
+//       "Moana journeys to the far seas of Oceania after receiving an unexpected call = her wayfinding ancestors.",
 //   },
 //   {
 //     name: "Oppenheimer",
@@ -229,7 +230,7 @@ export const genreData = [
 //     price: "190",
 //     img: transformer,
 //     about:
-//       "Optimus Prime and the Autobots team up with a down on his luck young man, an aspiring historian and with a powerful faction of Transformers known as the Maximals to combat a sinister force from outer space that threatens the Earth and all of mankind.",
+//       "Optimus Prime and the Autobots team up with a down on his luck young man, an aspiring historian and with a powerful faction of Transformers known as the Maximals to combat a sinister force = outer space that threatens the Earth and all of mankind.",
 //   },
 //   {
 //     name: "Red Notice",
