@@ -21,7 +21,7 @@ function Header() {
             <p className='font-semibold text-white text-2xl md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl'>Avengers Endgame</p>
             <p className='text-white'>Available in 3D</p>
             <div className='px-3 py-1 mt-2 bg-white rounded-lg w-31 flex items-center gap-2 hover:w-32 font-semibold transition-all duration-300'>
-              <p onClick={()=>navigate('/booking/3')} className='cursor-pointer' href='#genre'>Book Now</p>
+              <p onClick={()=>navigate('/booking/67e0fac5c6182681baa0f922')} className='cursor-pointer' href='#genre'>Book Now</p>
               <FaLongArrowAltRight />
             </div>
           </div>

@@ -8,7 +8,7 @@ function GenreMenu() {
 
       <h1 className='text-3xl font-medium'> Moives of your Interest </h1>
 
-      <p className='text-xl'> Select movies by genre and explore more here</p>
+      <p className='text-xl text-center'> Select movies by genre and explore more here</p>
 
       <div className='flex flex-wrap gap-5 items-center justify-center w-full pt-5 overflow-scroll'>
         {genreData.map((item, index) =>

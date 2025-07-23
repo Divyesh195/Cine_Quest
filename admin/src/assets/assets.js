@@ -5,12 +5,11 @@ import banner from "./banner.png";
 import acnG from "./genre/action.png";
 import sfG from "./genre/scienceFiction.png";
 import shG from "./genre/hero.png";
-import cmdG from "./genre/comedy.png";;
+import cmdG from "./genre/comedy.png";
 import aboutIMG from "./about.jpg";
 import contactUs from "./contact.png";
 import profileIMG from "./profile.png";
-import movie_img from "./mov_img.jpg"
-
+import movie_img from "./mov_img.jpg";
 
 export const assets = {
   logo,
@@ -109,11 +108,13 @@ export const genreData = [
 //     part: "",
 //     genre: "Action",
 //     path: "action",
-//     duration: "2H 39Min",
+//     duration: "2H 39M",
 //     price: "210",
 //     img: infinitywar,
 //     about:
 //       "As Thanos sets about his quest for finding the infinity stones and carrying out his twisted scheme, the Avengers join forces with their allies to stop him from causing chaos and destruction.",
+// email : "infinitywar@gmail.com",
+// password : "69696969"
 //   },
 //   {
 //     name: "interstellar",

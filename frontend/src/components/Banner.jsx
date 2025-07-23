@@ -7,14 +7,14 @@ function Banner() {
   const navigate =useNavigate();
 
   return (
-    <div className='flex bg-primary rounded-lg px-6 lg:px-6 my-20 md:mx-10 lg:'>
+    <div className='flex bg-primary rounded-lg px-6 lg:px-6 my-10 mx-2 sm:mx-10 md:mx-20'>
 
         {/* Left side  */}
 
         <div className='flex-1 py-8 sm:py-10 md:py-16 lg:py-16 lg:pl-5'>
-            <p className='text-lg sm:text-xl md:text-2xl lg:text-4xl text-white font-semibold'> Get food at affordable prices. </p>
-            <p className='text-lg sm:text-lg md:text-xl lg:text-3xl text-white font-semibold mt-2'> Meals and Drinks in wide range </p>
-            <button onClick={()=>{navigate('/login'); scrollTo(0,0)}} className='sm:p-3 p-1 sm:rounded-xl rounded-md mt-3 text-center font-semibold bg-white text-primary text-xl hover:text-white hover:bg-gray-700 transition-all ease-in duration-100 cursor-pointer'> Create Account </button>
+            <p className='text-2xl sm:text-3xl text-white font-semibold'> Get food at affordable prices. </p>
+            <p className='text-xl sm:text-2xl text-white mt-2'> Meals and Drinks in wide range </p>
+            <button onClick={()=>{navigate('/login'); scrollTo(0,0)}} className='sm:p-3 p-2 sm:rounded-xl rounded-md mt-3 text-center font-semibold bg-white text-primary text-xl hover:text-white hover:bg-gray-700 transition-all ease-in duration-100 cursor-pointer'> Create Account </button>
         </div>
 
         {/* Right side  */} 

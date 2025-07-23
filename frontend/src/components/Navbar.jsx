@@ -11,7 +11,16 @@ function Navbar() {
     const navigate = useNavigate();
 
     const [showMenu, setShowMenu] = useState(false)
+    const [profileMenu, setProfileMenu] = useState(false)
     const { token, setToken, customerData } = useContext(AppContext)
+
+    const profileMenuToggle = () =>{
+        if(profileMenu){
+            setProfileMenu(false)
+        }else(
+            setProfileMenu(true)
+        )
+    }
 
     const logOut = () => {
         if (token) {
@@ -56,12 +65,12 @@ function Navbar() {
                 {
                     token
                         ? <div className='flex gap-2 items-center group relative'>
-                            <img src={customerData.img} alt="" className='w-10 h-10 rounded-full cursor-pointer object-cover overflow-hidden' />
-                            <div className='absolute top-0 right-0 pt-12 text-gray-700 font-semibold z-20 hidden group-hover:block'>
-                                <div className='min-w-33 flex flex-col gap-2 p-3 bg-gray-200 rounded-md'>
-                                    <p onClick={() => navigate('my-profile')} className='cursor-pointer hover:text-black'>My Profile</p>
-                                    <p onClick={() => navigate('my-bookings')} className='cursor-pointer hover:text-black'>My Bookings</p>
-                                    <p onClick={logOut} className='cursor-pointer hover:text-black'>Log out</p>
+                            <img src={customerData.img} onClick={profileMenuToggle} alt="" className='w-10 h-10 rounded-full cursor-pointer object-cover overflow-hidden' />
+                            <div className={`absolute top-0 right-0 mt-10 text-gray-700 font-semibold z-20 ${profileMenu ? "block" : "hidden"}`}>
+                                <div className='min-w-33 flex flex-col gap-2 bg-gray-100 border border-gray-200 rounded-sm'>
+                                    <p onClick={() => navigate('my-profile')} className='cursor-pointer hover:text-black hover:bg-white px-3 py-1'>My Profile</p>
+                                    <p onClick={() => navigate('my-bookings')} className='cursor-pointer hover:text-black hover:bg-white  px-3 py-1'>My Bookings</p>
+                                    <p onClick={logOut} className='cursor-pointer hover:text-black hover:bg-white  px-3 py-1'>Log out</p>
                                 </div>
                             </div>
                         </div>
