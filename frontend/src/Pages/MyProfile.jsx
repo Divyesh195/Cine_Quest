@@ -85,7 +85,7 @@ function MyProfile() {
 
                         {
                             isEdit
-                                ? <select onChange={(e) => setCustomerData(prev => ({ ...prev, gender: e.target.value }))} value={customerData.gender} className=' text-lg bg-purple-200 outline-none rounded-md'>
+                                ? <select onChange={(e) => setCustomerData(prev => ({ ...prev, gender : e.target.value }))} value={customerData.gender} className=' text-lg bg-purple-200 outline-none rounded-md'>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Undefined">Undefined</option>
@@ -120,7 +120,7 @@ function MyProfile() {
                         {
                             isEdit
                                 ? <div>
-                                    <input type="text" value={customerData.address.line1} onChange={e => setCustomerData(prev => ({ ...prev, address: { ...prev.address, line1: e.target.value } }))} className=' outline-gray-200 text-lg w-full bg-purple-200 outline-none rounded-md' />
+                                    <input type="text" value={customerData.address.line1} onChange={e => setCustomerData(prev => ({ ...prev, address: { ...prev.address, line1: e.target.value } }))} className=' outline-gray-200 text-lg w-full bg-purple-200 outline-none rounded-md mb-1' />
                                     <br />
                                     <input type="text" value={customerData.address.line2} onChange={e => setCustomerData(prev => ({ ...prev, address: { ...prev.address, line2: e.target.value } }))} className=' outline-gray-200 text-lg w-full bg-purple-200 outline-none rounded-md' />
                                 </div>

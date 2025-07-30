@@ -140,7 +140,6 @@ const distributorDashboard = async(req,res)=>{
 
         res.json({success:true, dashData});
 
-        
     } catch (error) {
         console.log(error);
     }
