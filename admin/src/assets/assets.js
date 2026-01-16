@@ -122,11 +122,13 @@ export const genreData = [
 //     part: "",
 //     genre: "Science Fiction",
 //     path: "scifi",
-//     duration: "2H 50Min",
+//     duration: "2H 50M",
 //     price: "290",
 //     img: interstellar,
 //     about:
 //       "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+// email : interstellar@gmail.com,
+// password : 369369369
 //   },
 //   {
 //     name: "Moana 2",

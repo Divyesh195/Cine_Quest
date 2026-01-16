@@ -3,6 +3,9 @@
 *.psd
 *.ai
 
+.env
+*.env
+
 node_modules
 Images
 

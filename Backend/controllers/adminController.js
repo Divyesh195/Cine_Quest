@@ -115,7 +115,6 @@ const allMovies = async (req,res) =>{
     }
 }
 
-
 //API to fetch bookings for Admin
 const bookingsAdmin = async(req,res)=>{
     try {
